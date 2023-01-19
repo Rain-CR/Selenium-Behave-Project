@@ -1,7 +1,7 @@
-from Project.features.pages.sign_up import SignUp
+from features.pages.sign_up import SignUp
 from browser import Browser
-from Project.features.pages.sign_up_URL_verify import VerifyUrl
-from Project.features.pages.sign_in_form import FormPage
+from features.pages.sign_up_URL_verify import VerifyUrl
+from features.pages.sign_in_form import FormPage
 
 
 def before_all(context):
