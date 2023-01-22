@@ -1,42 +1,39 @@
 from behave import *
+import time
 
 
-@given('I am on the Jules App-sign-in')
-def go_sign_up_page(context):
-    context.sign_up_page.go_to_page()
-
-
-@when('I click personal')
+@when('I click personal value')
 def step_impl(context):
-    context.sign_up.click_personal()
+    context.complete_signup.click_personal()
 
 
-@when('I click continue')
+@when('I click continue button')
 def step_impl(context):
-    context.sign_up.continue_button()
+    context.complete_signup.continue_button()
+    time.sleep(2)
 
 
-@when('I input  the first name field')
+@when('I input correct first name')
 def step_impl(context):
-    context.sign_up.enter_data("Cosmin")
+    context.complete_signup.enter_data('Cosmin')
 
 
-@when('I input the last name field')
+@when('I input correct last name')
 def step_impl(context):
-    context.sign_up.enter_data("Craciun")
+    context.complete_signup.enter_data('Craciun')
 
 
-@when('I enter "{email}" in the email field')
+@when('I input "{email}"')
 def step_impl(context, email):
-    context.sign_up.enter_data(email)
+    context.complete_signup.enter_data(email)
 
 
-@then('A message with text "{text}" is displayed')
+@then('I verify the "{text}" is displayed')
 def step_impl(context, text):
-    assert context.sign_up.verify_error()[0]
-    assert context.sign_up.verify_error()[1] == text
+    assert context.complete_signup.verify_error()[0]
+    assert context.complete_signup.verify_error()[1] == text
 
 
-@then('The text "Please enter a valid email address." is not displayed')
+@then(u'I verify the "Please enter a valid email address." is not displayed')
 def step_impl(context):
-    assert context.sign_up.verify_error()[0] is False
+    assert context.complete_signup.verify_error()[0] is False
