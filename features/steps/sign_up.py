@@ -5,12 +5,13 @@ import time
 @when('I click personal value')
 def step_impl(context):
     context.complete_signup.click_personal()
-
+    time.sleep(2)
 
 @when('I click continue button')
 def step_impl(context):
     context.complete_signup.continue_button()
     time.sleep(2)
+
 
 
 @when('I input correct first name')

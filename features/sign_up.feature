@@ -1,4 +1,4 @@
-Feature: Complete signup
+Feature: Sign up
   Scenario Outline: Try sign up with wrong/correct email format
     Given I am on the Jules App-sign-in
     When  I click "Sign up." link
@@ -15,3 +15,4 @@ Feature: Complete signup
     | email   | status |
     | ceva  | displayed  |
     | ceva@ceva.com  |not displayed|
+
