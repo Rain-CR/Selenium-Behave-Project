@@ -1,11 +1,6 @@
 from behave import *
 
 
-@Given('I am on the Jules App-sign-in')
-def step_impl(context):
-    context.sign_in_form.go_home()
-
-
 @When('I input correct email')
 def step_impl(context):
     context.sign_in_form.input_email('craciun.raducosmin@yahoo.com')

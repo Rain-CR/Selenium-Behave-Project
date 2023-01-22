@@ -1,7 +1,7 @@
 from behave import *
 
 
-@given('I am on the sign-up page')
+@given('I am on the Jules App-sign-in')
 def go_sign_up_page(context):
     context.sign_up_page.go_to_page()
 
